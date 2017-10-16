@@ -1,4 +1,4 @@
-* Planeamento
+* Planeamento conteúdos
 Quero um artigo claro, técnico  que transmita a um publico com instrução
 não avançada a ideia principal da publicaçao, a aplicação prática de que ali
 se conseguiu.
@@ -12,4 +12,30 @@ se conseguiu.
    O que é o 5G?
    Para que é que isto da modulação da frente de onda serve?
    O que é a frente de onda?
-   Agora ja nao e parvo
+   
+** Conceitos a explicar
+   Frente de onda
+   Modulação
+   SLM
+
+* Planeamento estrutura
+** Problema
+   Mais comunicação, mais dados melhores infraestruturas
+   Vem aí o 5G (o que é isto?)
+
+** Solução
+***   VLC 
+      (O que é isto?)
+      Vantagens?
+     
+*** Modulação espacial da frente de onda
+    O que é a frente de onda?
+    O que é modular a frente de onda?
+    Em que é que isso é útil
+    Como modular a frente de onda?
+
+*** Spatial Light Modulator
+    O que é isto?
+    Como funciona? 
+    
+    
