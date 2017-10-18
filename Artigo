@@ -67,8 +67,11 @@
   telecomunicações? As contas são simples: o SLM tem uma determinada
   resolução, no nosso caso 1024x768, temos portanto 786432 píxeis que
   podemos modular; além disto a refresh rate do SLM é de 120 Hz,
-  portanto conseguiríamos transmitir mais 120*786432=94.37 kB/s !
-  [Bits ou Baud???]
+  portanto conseguiríamos transmitir mais 120*786432=94.37 kBaud! O
+  Baud é uma unidade de símbolos por segundo. Os símbolos podem ser
+  simples zeros e uns, representados por '0' e '1', respectivamente,
+  ou podem ser conjuntos destes, por exemplo, 'a' ou 'b' são símbolos
+  que podem ser interpretados como '001' e '010', respectivamente.
   Obviamente, este resultado poderia ser melhorado se usarmos
   equipamentos com melshores especificações. Por outro lado, não
   podemos assumir que conseguimos detectar cada píxel individualmente,
