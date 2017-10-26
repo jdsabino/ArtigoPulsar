@@ -1,0 +1,131 @@
+% Created 2017-10-25 qua 17:30
+\documentclass[11pt]{article}
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fixltx2e}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{marvosym}
+\usepackage{wasysym}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\tolerance=1000
+\date{\today}
+\title{Artigo}
+\hypersetup{
+  pdfkeywords={},
+  pdfsubject={},
+  pdfcreator={Emacs 24.5.1 (Org mode 8.2.10)}}
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\section{Usar a luz como um caixote de bits}
+\label{sec-1}
+
+\subsection{Intro}
+\label{sec-1-1}
+É provável que já tenhas ouvido notícias com referências a "testes
+5G" que empresas como a PT ou a Vodafone tenham feito e em como as
+empresas de telecomunicações fazem esforços diários para conseguir
+aumentar o fluxo de informação das redes móveis, a fim de proporcionar
+aos seus clientes um melhor serviço. As redes de quinta geração
+permitirão a transmissão de um maior número de dados (mais bits por
+segundo), permitindo assim um serviço mais rápido e robusto aos
+utilizadores.  De facto, o cada vez maior
+número  de serviços que utilizam a rede móvel, não só as chamadas
+de voz e vídeo ou sms, mas também de toda a panóplia de aplicações
+que precisam de acesso à internet constantemente (redes sociais, ou 
+aplicações como o Youtube que consomem um grande volume de dados),
+torna necessário que as redes de comunicações móveis consigam
+transmitir um maior fluxo de informação. E como fazer isso? Uma das
+soluções poderá passar por  aumentar a eficiência
+espectral, ou seja, aumentar o número de bits que se consegue
+transmitir na mesma largura de banda.
+
+\subsection{Solução}
+\label{sec-1-2}
+No Instituto de Telecomunicações (IT) está a ser desenvolvido  um projecto, que
+envolve os polos do IT de Aveiro e Lisboa, cujo objectivo é
+implementar uma rede 5G e conseguir atingir taxas de transmissão de
+dados da ordem dos XXGbits/s. Uma das técnicas explorada neste
+projecto usa Comunicações de Luz Visível (Visible Light
+Communications, ou VLC, em inglês), isto é, comunicações que usam
+luz no espectro do visível (entre os 400-700 nm) para transmitir
+informação, são uma potencial solução para as futuras redes
+5G. As VLC têm algumas vantagens como o facto de poderem ser usadas
+juntamente com sinais de Raiofrequência (não há interferência entre
+estes dois tipos de luz)e também  permtirem implementações mais
+eficientes em termos de custo e de consumo de energia. Uma das
+técnicas exploradas na VLC tem o nome de Modulação Espacial da
+Frente-de-onda e tem por objectivo transportar informação na frente
+de onda de um feixe. Para melhor parcebermos como funciona esta
+técnica, vejamos um exemplo. Imagina que tens um laser e fazes um
+corte tranversal num determinado ponto do espaço. Se olhares o laser
+"de frente" o campo electromagnético que observas pode ser descrito
+pela expressão $E(X,y)=E_0\exp^{i\phi (x,y)}$, em que E$_{\text{0}}$ é a
+amplitude do campo eléctrico e $\phi(x,y)$ é a fase do mesmo
+campo. O que isto significa é que a fase deste campo pode ser
+discretizada numa matriz (vê a Figura 1) e que, se conseguirmos
+modular a fase em cada um destes "píxeis", conseguimos gerar
+diferentes padrões e associar a cada um deles diferentes símbolos
+(zeros e uns, por exemplo) e, portanto, transmitir informação.
+
+[IMAGEM COM ESQUEMA DE FRENTE DE ONDA]
+
+Para efectuar esta modulação de fase espacial, utiliza-se um
+aparelho chamado Modulador Espacial da Luz (Spatial Light Modulator,
+ou SLM em inglês) que consiste num pequeno ecrã LCD onde conseguimos
+controlar o íncdice de refracção da luz em cada píxel. Como temos
+este controlo sobre cada píxel, ao definir diferentes índices
+refracção para diferentes píxeis, vamos alterar a  velocidade do
+feixe em cada secção representada na figura 1 e, consequentemente, a
+fase do feixe. Deste modo, quando fazemos um corte transversal no
+feixe, teremos vários valores de fase consoante as coordenadas (x,y)
+que observamos e assim conseguimos "imprimir" qualquer  padrão
+na frente de onda do feixe (Vê os exemplos da figura 2).
+
+[PADRÕES ENGRAÇADOS]
+
+Se esta técnica funcionasse de forma ideal, em quanto é que
+conseguiríamos aumentar o fluxo de dados de uma rede de
+telecomunicações? As contas são simples: o SLM tem uma determinada
+resolução, no nosso caso 1024x768, temos portanto 786432 píxeis que
+podemos modular; além disto a refresh rate do SLM é de 120 Hz,
+portanto conseguiríamos transmitir mais 120*786432=94.37 kBaud! O
+Baud é uma unidade de símbolos por segundo. Os símbolos podem ser
+simples zeros e uns, representados por '0' e '1', respectivamente,
+ou podem ser conjuntos destes, por exemplo, 'a' ou 'b' são símbolos
+que podem ser interpretados como '001' e '010', respectivamente.
+Obviamente, este resultado poderia ser melhorado se usarmos
+equipamentos com melshores especificações. Por outro lado, não
+podemos assumir que conseguimos detectar cada píxel individualmente,
+pois os equipamentos que usamos nunca são perfeitos e além disso há
+outras fontes de erro a considerar. No entanto, existe uma solução
+para ultrapassar este problema, podemos agrupar um número de píxeis
+específico e criar píxeis maiores, de modo a reduzir os erros de
+detecção. A figura 3 mostra resultados experimentais onde se
+minimizou o número de píxeis agrupados. O do fluxo de
+informação não seria tão elevado como indica o cálculo anterior mas
+ainda assim é possível aumentá-lo siginficaivamente.
+
+[IMAGEM COM OS PADRÕES DOS QUADRADOS]
+
+O próximo passo será estudar quantos são os níveis de fase que se
+conseguem distinguir. Se não ficarmos limitados apenas a dois níveis
+de fase (uns e zeros) mas conseguir distinguir distinguir três ou
+mais, seria possível expandir o número de padrões que se consegue
+produzir com os memsos píxeis e, consequentemente, a taxa de
+símbolos enviados por segundo.
+Este trabalho foi desenvolvido por mim, pelo Prof. Paulo André do IT
+em colaboração com o Prof Gonçalo Figueira do Grupo de Lasers e
+Plasmas (GOLP).
+% Emacs 24.5.1 (Org mode 8.2.10)
+\end{document}
